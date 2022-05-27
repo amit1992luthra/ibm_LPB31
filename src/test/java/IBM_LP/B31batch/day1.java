@@ -1,5 +1,6 @@
 package IBM_LP.B31batch;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 import io.restassured.RestAssured;
@@ -70,14 +71,14 @@ public class day1 {
 		
 	}
 	
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void postandputexample2()
 	{
 		
 		RestAssured.baseURI="http://localhost:3000";
 		
 		JSONObject obj = new JSONObject();
-		obj.put("firstname", "sri");
+		obj.put("id", "sri");
 		obj.put("lastname", "xyz");
 		obj.put("place", "goa");
 		
@@ -96,6 +97,47 @@ public class day1 {
 			.log().all();
 	
 			
+		
+	}
+	
+	@Test
+	public void jsonobjexample()
+	{
+
+		RestAssured.baseURI="http://localhost:3000";
+		
+		JSONObject obj = new JSONObject();
+		obj.put("id",0);
+		obj.put("name", "abc");
+		obj.put("status", "available");
+		
+		JSONObject catobj = new JSONObject();
+		catobj.put("id", 0);
+		catobj.put("name", "doggie");
+		
+		JSONObject tagobj = new JSONObject();
+		tagobj.put("id", 0);
+		tagobj.put("name", "doggie");
+		
+		obj.put("category", catobj);
+		
+		JSONArray arrayobj = new JSONArray();
+		arrayobj.add("fish");
+		arrayobj.add("dog");
+		arrayobj.add("cat");
+		
+		
+		JSONArray tagarrayobj = new JSONArray();
+		tagarrayobj.add(tagobj);
+		
+		obj.put("photourls", arrayobj);
+		
+		obj.put("tags", tagarrayobj);
+		
+		
+		
+		
+		System.out.println(obj.toJSONString());
 		
 	}
 

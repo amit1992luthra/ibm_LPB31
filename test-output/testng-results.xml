@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3884" started-at="2022-05-27T05:05:47Z" finished-at="2022-05-27T05:05:51Z">
+  <suite name="Default suite" duration-ms="657" started-at="2022-05-27T05:55:36Z" finished-at="2022-05-27T05:55:37Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="3884" started-at="2022-05-27T05:05:47Z" finished-at="2022-05-27T05:05:51Z">
+    <test name="Default test" duration-ms="657" started-at="2022-05-27T05:55:36Z" finished-at="2022-05-27T05:55:37Z">
       <class name="IBM_LP.B31batch.day1">
-        <test-method status="PASS" signature="postandputexample2()[pri:0, instance:IBM_LP.B31batch.day1@6fffcba5]" name="postandputexample2" duration-ms="3852" started-at="2022-05-27T10:35:47Z" finished-at="2022-05-27T10:35:51Z">
+        <test-method status="PASS" signature="postandputexample2()[pri:0, instance:IBM_LP.B31batch.day1@6fffcba5]" name="postandputexample2" duration-ms="644" started-at="2022-05-27T11:25:36Z" finished-at="2022-05-27T11:25:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- postandputexample2 -->
