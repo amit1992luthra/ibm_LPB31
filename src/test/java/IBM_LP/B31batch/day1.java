@@ -18,7 +18,7 @@ public class day1 {
 		//System.out.println(resp.get);
 	}
 	
-	@Test
+	@Test(enabled=false)
 	public void testcase2()
 	{
 		
@@ -31,10 +31,27 @@ public class day1 {
 		    .log().all();
 		
 		given()
-		.get("/ibmexample/1").
+		.delete("/ibmexample/1").
 	    then()
 	    .statusCode(200)
 	    .log().all();
+	}
+	
+	
+	
+	@Test
+	public void testcase3()
+	{
+		
+		RestAssured.baseURI="http://localhost:3000";
+		
+		given()
+			.get("/ibmexample").
+		then()
+		    .statusCode(200)
+		    .log().all();
+		System.out.println("git changes");
+		
 	}
 
 }
