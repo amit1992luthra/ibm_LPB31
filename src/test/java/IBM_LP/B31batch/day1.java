@@ -2,10 +2,14 @@ package IBM_LP.B31batch;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.testng.ITestContext;
 import org.testng.annotations.Test;
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+
 import static io.restassured.RestAssured.*;
 import io.restassured.response.Response;
+import junit.framework.Assert;
 
 public class day1 {
 	
@@ -100,7 +104,7 @@ public class day1 {
 		
 	}
 	
-	@Test
+	@Test(enabled = false)
 	public void jsonobjexample()
 	{
 
@@ -138,6 +142,55 @@ public class day1 {
 		
 		
 		System.out.println(obj.toJSONString());
+		
+	}
+	
+	
+	@Test(enabled=true)
+	public void example1(ITestContext val)
+	{
+		
+		RestAssured.baseURI="http://localhost:3000";
+		
+		JSONObject obj = new JSONObject();
+		obj.put("firstname", "amit");
+		obj.put("lastname", "xyz");
+		obj.put("place", "delhi");
+		
+		Response res = given()
+			.contentType(ContentType.JSON)
+			.body(obj.toJSONString()).
+		when()
+			.post("/ibmexample").
+		then()
+		    .statusCode(201)
+		    .log().all().extract().response();
+		
+		
+		String id = res.jsonPath().getString("id");
+		String fname = res.jsonPath().getString("firstname");
+		
+		Assert.assertEquals("xyz", fname);
+		
+		System.out.println(id);
+		System.out.println(fname);
+		
+		val.setAttribute("keyname", id);
+		val.setAttribute("fname", fname);
+		
+	}
+	
+	@Test(enabled=true,dependsOnMethods="example1")
+	public void example2(ITestContext val1)
+	{
+		RestAssured.baseURI="http://localhost:3000";
+		String id = val1.getAttribute("keyname").toString();
+		given()
+			.get("/ibmexample/"+id).
+		then()
+		    .statusCode(200)
+		    .log().all();
+		System.out.println(val1.getAttribute("fname").toString());
 		
 	}
 
