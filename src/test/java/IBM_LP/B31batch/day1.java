@@ -3,16 +3,21 @@ package IBM_LP.B31batch;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.testng.ITestContext;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 
 import static io.restassured.RestAssured.*;
+
+import java.io.IOException;
+
 import io.restassured.response.Response;
 import junit.framework.Assert;
 
 public class day1 {
 	
+
 	@Test(enabled=false)
 	public void testcase1()
 	{
@@ -146,7 +151,7 @@ public class day1 {
 	}
 	
 	
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void example1(ITestContext val)
 	{
 		
@@ -172,15 +177,17 @@ public class day1 {
 		
 		Assert.assertEquals("xyz", fname);
 		
+		
 		System.out.println(id);
 		System.out.println(fname);
+		
 		
 		val.setAttribute("keyname", id);
 		val.setAttribute("fname", fname);
 		
 	}
 	
-	@Test(enabled=true,dependsOnMethods="example1")
+	@Test(enabled=false,dependsOnMethods="example1")
 	public void example2(ITestContext val1)
 	{
 		RestAssured.baseURI="http://localhost:3000";
@@ -193,5 +200,69 @@ public class day1 {
 		System.out.println(val1.getAttribute("fname").toString());
 		
 	}
+	
+	@Test(enabled=false)
+	public void queryparam()
+	{
+		RestAssured.baseURI="https://petstore.swagger.io/v2";
+		
+		given()
+			.queryParam("username", "amit")
+			.queryParam("password", "123456")
+			.log().all().
+		when().
+			get("/user/login").
+		then()
+		    .statusCode(200)
+		    .log().all();
+	}
+	
+	@DataProvider(name="data")
+	public Object[][]testdata1()
+	{
+		Object[][] obj = new Object[2][3];
+		obj[0][0]="amit";
+		obj[0][1]="luthra";
+		obj[0][2]="delhi";
+		obj[1][0]="ankit";
+		obj[1][1]="mishra";
+		//obj[1][2]="chennai";
+		
+		return obj;
+		
+	}
+	
+	@DataProvider(name="testdata")
+	public Object[][]testdata2() throws IOException
+	{
+		Object[][] obj  = testdata.testdata();
+		
+		return obj;
+		
+	}
+	
+	
+	@Test(enabled=true,dataProvider="testdata")
+	public void dataproviderexample1(String fname, String lname,String place)
+	{
+		
+		RestAssured.baseURI="http://localhost:3000";
+		
+		JSONObject obj = new JSONObject();
+		obj.put("firstname", fname);
+		obj.put("lastname", lname);
+		obj.put("place", place);
+		
+		 given()
+			.contentType(ContentType.JSON)
+			.body(obj.toJSONString()).
+		when()
+			.post("/ibmexample").
+		then()
+		    .statusCode(201)
+		    .log().all();
+	}
+	
+	
 
 }

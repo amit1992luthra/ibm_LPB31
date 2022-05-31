@@ -1,89 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="1" total="2" passed="0">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3447" started-at="2022-05-30T04:51:52Z" finished-at="2022-05-30T04:51:56Z">
+  <suite name="Default suite" duration-ms="3174" started-at="2022-05-31T05:38:56Z" finished-at="2022-05-31T05:39:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="3447" started-at="2022-05-30T04:51:52Z" finished-at="2022-05-30T04:51:56Z">
+    <test name="Default test" duration-ms="3174" started-at="2022-05-31T05:38:56Z" finished-at="2022-05-31T05:39:00Z">
       <class name="IBM_LP.B31batch.day1">
-        <test-method status="FAIL" signature="example1(org.testng.ITestContext)[pri:0, instance:IBM_LP.B31batch.day1@6fffcba5]" name="example1" duration-ms="3428" started-at="2022-05-30T10:21:52Z" finished-at="2022-05-30T10:21:56Z">
+        <test-method status="PASS" signature="dataproviderexample1(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:IBM_LP.B31batch.day1@28f67ac7]" name="dataproviderexample1" duration-ms="2308" started-at="2022-05-31T11:08:57Z" data-provider="testdata" finished-at="2022-05-31T11:08:59Z">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dataproviderexample1 -->
+        <test-method status="PASS" signature="dataproviderexample1(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:IBM_LP.B31batch.day1@28f67ac7]" name="dataproviderexample1" duration-ms="43" started-at="2022-05-31T11:08:59Z" data-provider="testdata" finished-at="2022-05-31T11:09:00Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@6aaa5eb0]]>
+                <![CDATA[amit]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[luthra]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[delhi]]>
               </value>
             </param>
           </params>
-          <exception class="junit.framework.ComparisonFailure">
-            <message>
-              <![CDATA[expected:<xyz> but was:<amit>]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[junit.framework.ComparisonFailure: expected:<xyz> but was:<amit>
-	at junit.framework.Assert.assertEquals(Assert.java:81)
-	at junit.framework.Assert.assertEquals(Assert.java:87)
-	at IBM_LP.B31batch.day1.example1(day1.java:173)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:782)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
-]]>
-            </full-stacktrace>
-          </exception> <!-- junit.framework.ComparisonFailure -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- example1 -->
-        <test-method status="SKIP" signature="example2(org.testng.ITestContext)[pri:0, instance:IBM_LP.B31batch.day1@6fffcba5]" name="example2" duration-ms="0" started-at="2022-05-30T10:21:56Z" depends-on-methods="IBM_LP.B31batch.day1.example1" finished-at="2022-05-30T10:21:56Z">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method day1.example2(org.testng.ITestContext)[pri:0, instance:IBM_LP.B31batch.day1@6fffcba5] depends on not successfully finished methods]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method day1.example2(org.testng.ITestContext)[pri:0, instance:IBM_LP.B31batch.day1@6fffcba5] depends on not successfully finished methods
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1039)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:782)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
+        </test-method> <!-- dataproviderexample1 -->
+        <test-method status="PASS" signature="dataproviderexample1(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:IBM_LP.B31batch.day1@28f67ac7]" name="dataproviderexample1" duration-ms="44" started-at="2022-05-31T11:09:00Z" data-provider="testdata" finished-at="2022-05-31T11:09:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ankit]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[sharma]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[goa]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- example2 -->
+        </test-method> <!-- dataproviderexample1 -->
       </class> <!-- IBM_LP.B31batch.day1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

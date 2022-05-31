@@ -6,14 +6,4 @@
       <class name="IBM_LP.B31batch.day1"/>
     </classes>
   </test> <!-- Default test -->
-  <test name="Default test(failed)">
-    <classes>
-      <class name="IBM_LP.B31batch.day1">
-        <methods>
-          <include name="example1" invocation-numbers="0"/>
-          <include name="example2"/>
-        </methods>
-      </class> <!-- IBM_LP.B31batch.day1 -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
